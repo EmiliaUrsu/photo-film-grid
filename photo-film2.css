@@ -1,0 +1,331 @@
+body{
+    --color-prop:#615c59bb;
+    --main-dark:#242321;
+    --main-light:#C6C5C2;
+}
+
+body{
+    background:
+    radial-gradient(var(--main-light),
+                    var(--main-dark)),
+    url(images/textile.jpg);
+    background-blend-mode: lighten;
+    margin: 0;
+   
+
+}
+.grid-container{
+    background-color: burlywood;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    display: grid;
+    font-size: 30px;
+    color: black;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas: ". . . . . "
+                         ". a a b b "
+                         ". a a b b "
+                         ". c c d d "
+                         ". c c d d "
+                         ". . . . . ";
+    gap: 1em;                     
+
+}
+@media(min-aspect-ratio:7/5){
+    .grid-container{
+     top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas: ". . . . . "
+                         ". a a b b "
+                         ". a a b b "
+                         ". c c d d "
+                         ". c c d d "
+                         ". . . . . ";
+    gap: 1em;  
+}
+}
+@media(max-aspect-ratio:8/11){
+    .grid-container{
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    grid-template-areas: ". . . . . "
+                         ". a a . . "
+                         ". a a . . "
+                         ". b b . . "
+                         ". b b . . "
+                         ". c c . . "
+                         ". c c . . "
+                         ". d d . . "
+                         ". d d . . "
+                         ". . . . . ";
+    gap: 1em;  
+}
+}
+.grid-container>.feature{
+    
+    padding: 20px;
+    border: black 2px solid;
+}
+.grid-container>div{
+    padding: 10px;
+   color: transparent;
+
+}
+.grid-container>div:nth-child(9) {
+grid-row-start: 1;
+grid-row-end: 3;
+grid-column-start: -3;
+background-image: url(https://i.picsum.photos/id/678/400/600.jpg?hmac=1HFF6acqJLXO1wxzof-asJVUi_26Vgg8ToI3rY0RmIU);
+background-size: cover;
+background-position: center;
+
+}
+.grid-container>div:nth-child(4n+4){
+    background-image: url(https://i.picsum.photos/id/81/400/600.jpg?hmac=sEBvkMwCTcFhSBpXkkS7ZebxuxR_1E46Q2hZsRKu5UQ);
+    background-size: cover;
+    background-position: center;
+    
+
+}
+.grid-container>div:nth-child(3n+3){
+    background-image: url(https://i.picsum.photos/id/115/400/600.jpg?hmac=rIi1IbgZkaEme7z_PpKwRa8rZ-QayBCuROMna3kk7kE);
+    background-size: cover;
+    background-position: center;
+    filter:brightness(50%);
+    
+}
+.grid-container>div:nth-child(28){
+    padding: 15px;
+}
+
+.grid-container>.feature:nth-child(1){
+    grid-area: a;
+    
+}
+.grid-container>.feature:nth-child(2){
+    grid-area: b;
+}
+.grid-container>.feature:nth-child(3){
+    grid-area: c;
+}
+.grid-container>.feature:nth-child(4){
+    grid-area: d;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.origin{
+    width: 0px;
+    height: 0px;
+    background-color: whitesmoke;
+    position: absolute;
+    top: 50%;
+    left: 33%;
+}
+.v-guide{
+    position: absolute;
+    height: 100vh;
+    top: -50vh;
+    width: 1px;
+    background-color: #888;
+    left: 0;
+}
+.h-guide{
+    position: absolute;
+    width: 100vw;
+    height: 1px;
+    left: -33vw;
+    top: 0;
+    background-color: #888;
+}
+.origin .film{
+   
+    background-size: 20px 30px,20px 30px;
+    width: calc(7 * (2 * 1vw + 400px) );
+    font-size: 0;
+    position: relative;
+    left:-33vw;
+    top:-178px;
+    filter: drop-shadow(3vh 3vh 3vh #615C59);
+    animation: film-slide 30s linear infinite;
+}
+.origin .film li{
+    display: inline-block;
+    padding:0 1vw;
+    background-color: var(--color-prop);
+   
+}
+.origin .film li img{
+   
+  filter: grayscale(100%);
+}
+.origin .film::before{
+content: "";
+height: 3vh;
+display: block;
+background-image: radial-gradient(transparent 49%,var(--color-prop) 51%);
+background-size: 2vw 100%;
+}
+.origin .film::after{
+content: "";
+height: 3vh;
+display: block;
+background-image: radial-gradient(transparent 49%,var(--color-prop) 51%);
+background-size: 2vw 100%;
+}
+.origin .camera{
+    width: 540px;
+    height: 420px;
+    background-image: linear-gradient( to bottom,rgb(165, 108, 42) 0 50%, bisque  50% 100%);
+    position: absolute;
+    top:-210px;
+    left: -280px;
+    border-radius: 20%;
+    overflow: hidden;
+}
+
+ .origin .camera .rainbow{
+  width: 20%;
+  height: 210px;
+  margin-left: 35px;
+  background-image: linear-gradient(to right,red 0 25%,yellow 25% 50%,green 50% 75%,blue 75% 100%);
+  border-top-left-radius:20%;
+    
+ }
+ .origin .camera .obectiv{
+     width: 220px;
+     height: 220px;
+     background-color: bisque;
+     border-radius: 100%;
+     top:100px;
+     left:160px;
+     position: absolute;
+     box-shadow: 10px 0px 30px rgba(122, 100, 67, 0.767);
+ }
+ .origin .camera .obectiv .focus{
+     width: 150px;
+     height: 150px;
+     background-image:radial-gradient( rgb(82, 47, 165),rgb(3, 3, 24));
+     border-radius: 100%;
+     position: absolute;
+     top: 35px;
+     left: 35px;
+
+ } 
+ .origin .camera .obectiv .focus .f1{
+     width: 80px;
+     height: 80px;
+     border-radius: 100%;
+     position: absolute;
+     background-color: rgb(99, 99, 170);
+     top:35px;
+     left: 35px;
+ }
+ .origin .camera .obectiv .focus .f1 .f2{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: rgb(4, 4, 44);
+    top:20px;
+    left: 20px;
+}
+.origin .camera .point{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border-radius: 15%;
+    background-image: radial-gradient(rgb(4, 4, 15) ,darkblue);
+    top:20px;
+    left: 415px;
+    
+    
+}
+.origin .camera .point .p1{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-radius: 100%;
+    background-color:  rgb(99, 99, 170);
+    top:17px;
+    left: 15px;
+}
+.origin .camera .point .p1 .p2{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 100%;
+    background-color:black;
+    top:15px;
+    left: 15px;
+}
+ .origin .film li:nth-child(1) img{
+ animation: flash-img 7s ;
+ animation-fill-mode: forwards;
+ animation-delay: 28s;
+}
+.origin .film li:nth-child(2) img{
+    animation: flash-img 6s ;
+    animation-fill-mode: forwards;
+    animation-delay: 22s;
+   }
+   .origin .film li:nth-child(3) img{
+    animation: flash-img 5s ;
+    animation-fill-mode: forwards;
+    animation-delay: 18s;
+   }
+   .origin .film li:nth-child(4) img{
+    animation: flash-img 4s ;
+    animation-fill-mode: forwards;
+    animation-delay: 14s;
+   }
+   .origin .film li:nth-child(5) img{
+    animation: flash-img 3s ;
+    animation-fill-mode: forwards;
+    animation-delay: 10s;
+   }
+   .origin .film li:nth-child(6) img{
+    animation: flash-img 2s ;
+    animation-fill-mode: forwards;
+    animation-delay: 4s;
+   }
+   .origin .film li:nth-child(7) img{
+    animation: flash-img 3s ;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    
+   }
+
+@keyframes film-slide{
+    from{
+left: -200vw;
+    }
+    to{
+left:-33vw;
+    }
+}
+@keyframes flash-img{
+0%{
+    filter: grayscale(100%);
+}
+100%{
+    filter: grayscale(0%);
+}
+}
